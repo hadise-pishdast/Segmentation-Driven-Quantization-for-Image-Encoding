@@ -1,62 +1,84 @@
-# Segmentation-Driven-Quantization-for-Image-Encoding
-The human visual system focuses on active areas in images, such as people or vehicles. This project introduces a lossy encoder using image segmentation to guide quantization, improving compression while preserving quality. Less critical areas undergo higher quantization at the block level. The diagram below illustrates the process.
+# Segmentation-Driven Quantization for Image Encoding
+
+## Project Title
+Segmentation-Driven Quantization for Image Encoding
 
 ## Team Members
-- **Juan Merlos**  
-- **Hadise Pishdast**
+- Juan Merlos
+- Hadise Pishdast
 
----
+## Project Description
+Human visual systems are naturally drawn to areas of activity within images, typically containing objects such as people, animals, and vehicles. This project proposes the implementation of a lossy encoder that leverages image segmentation to guide the quantization process. By applying variable quantization informed by segmentation, the goal is to enhance compression efficiency while preserving high image quality for the observer.
 
-## Overview
-This project implements a lossy image encoding process that leverages **image segmentation** to guide quantization. The key idea is to apply adaptive quantization based on the importance of different regions within the image. By focusing on preserving high-quality details in areas with significant visual activity (such as objects or edges) and allowing more aggressive compression in less important areas, this approach improves compression efficiency while maintaining overall image quality.
-
-The program outputs two versions of the encoded image:
-1. **Regular Encoding**: Standard JPEG quantization applied uniformly.
-2. **Adaptive Encoding**: Segmentation-based quantization with variable quality across regions.
-
----
+Areas deemed of low importance are quantized to a higher degree at the block level, thereby achieving better compression without significantly compromising perceived quality.
 
 ## Features
-- Edge detection to identify important areas of the image.
-- Adaptive quantization scales for important and non-important blocks.
-- Adjustable compression settings to balance bitrate and quality.
-- Visualization of original, segmented, and encoded images.
-- Bitrate comparison between regular and adaptive encoding.
+- Implementation of image segmentation for adaptive quantization.
+- Variable quantization scales for important and non-important image blocks.
+- Iterative adjustment of quantization to minimize bitrate differences.
+- Visualization of original, regular encoding, adaptive encoding, and edge detection results.
 
----
+## Software Used
+- Python 3.x
+- OpenCV
+- NumPy
+- Matplotlib
 
-## Software Requirements
-- **Python 3.8+**
-- Libraries:
-  - `cv2` (OpenCV)
-  - `numpy`
-  - `matplotlib`
+## Installation Guide
 
----
+### Prerequisites
+1. Python 3.8 or later
+2. A Jupyter Notebook environment
+3. Libraries: OpenCV, NumPy, Matplotlib
 
-## How to Install and Run
-### 1. Installation
-- Clone this repository:  
-  ```bash
-  git clone <repository-link>
-  cd <repository-folder>
-## Install the required dependencies
-- pip install opencv-python-headless numpy matplotlib
+Install the required libraries using:
+```bash
+pip install opencv-python numpy matplotlib
+```
 
-## Running the Program
-- Ensure the input image is placed in the appropriate directory and update the image path in the script if necessary.
-- Run the script in a Jupyter Notebook or Python environment:
-- python3 segmentation_quantization.py
+### Steps to Run
+1. Clone this repository to your local machine.
+2. Open the Jupyter Notebook in your preferred environment.
+3. Provide an input image in the specified directory (refer to the **Input Format** section).
+4. Execute the notebook cell by cell to process the image.
+5. The outputs will be saved as `regular_encoded_image.jpg` and `adaptive_encoded_image.jpg` in the current directory. Plots of results will also be displayed inline.
+
+## Input Format
+- **Format:** `.png` images
+- **Resolution:** The input image must be 1920x1080 pixels.
+- **Color Space:** Images should be in RGB.
+
+## Operating System Compatibility
+This project has been tested on:
+- Linux
+- Windows
 
 ## Expected Output
-- The program generates the following outputs:
+1. `regular_encoded_image.jpg`: Image compressed with regular encoding.
+2. `adaptive_encoded_image.jpg`: Image compressed with segmentation-driven adaptive encoding.
+3. Visualization of:
+   - Original image
+   - Edges/Contours detected in the image
+   - Reconstructed image from regular encoding
+   - Reconstructed image from adaptive encoding
+   - Blocks with edges highlighted
 
-- Regular Encoding Image: Saved as regular_encoded_image.jpg in the current working directory.
-- Adaptive Encoding Image: Saved as adaptive_encoded_image.jpg in the current working directory.
-- Additionally, the program displays:
+## Code Workflow
+1. **Segmentation**: Edge detection is performed using the Canny algorithm to identify areas of importance.
+2. **Quantization**:
+   - Regular encoding uses a standard JPEG quantization table.
+   - Adaptive encoding uses different quantization scales for blocks identified as important or non-important.
+3. **Bitrate Calculation**: Bitrate is calculated based on the number of non-zero coefficients in quantized blocks.
+4. **Iterative Adjustment**: Quantization scales are adjusted iteratively to minimize the bitrate difference between regular and adaptive encoding.
+5. **Visualization**: The results, including images and bitrates, are displayed and saved for analysis.
 
-- The original image.
-- Edge-detected regions.
-- Blocks marked as important or non-important.
-- Regular and adaptive encoding results, along with their respective bitrates.
-- This section is concise and formatted for easy integration into your GitHub README. Let me know if you need further edits!
+## References
+1. OpenCV Documentation: [https://opencv.org/](https://opencv.org/)
+2. NumPy Documentation: [https://numpy.org/](https://numpy.org/)
+3. JPEG Compression Basics: [https://en.wikipedia.org/wiki/JPEG](https://en.wikipedia.org/wiki/JPEG)
+
+## Code Comments
+The code is well-commented to provide clarity on each function and its purpose. Key areas include:
+- DCT and quantization functions
+- Edge detection and block segmentation logic
+- Iterative adjustment of quantization scales
