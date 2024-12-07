@@ -11,6 +11,7 @@ Segmentation-Driven Quantization for Image Encoding
 Human visual systems are naturally drawn to areas of activity within images, typically containing objects such as people, animals, and vehicles. This project proposes the implementation of a lossy encoder that leverages image segmentation to guide the quantization process. By applying variable quantization informed by segmentation, the goal is to enhance compression efficiency while preserving high image quality for the observer.
 
 Areas deemed of low importance are quantized to a higher degree at the block level, thereby achieving better compression without significantly compromising perceived quality.
+![image](https://github.com/user-attachments/assets/6bfd0a8d-f168-4515-92fb-1ebd19ed9b0a)
 
 ## Features
 - Implementation of image segmentation for adaptive quantization.
