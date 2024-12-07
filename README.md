@@ -52,6 +52,7 @@ pip install opencv-python numpy matplotlib
 This project has been tested on:
 - Linux
 - Windows
+- macOS
 
 ## Expected Output
 1. `regular_encoded_image.jpg`: Image compressed with regular encoding.
