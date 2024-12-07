@@ -40,3 +40,23 @@ The program outputs two versions of the encoded image:
   ```bash
   git clone <repository-link>
   cd <repository-folder>
+## Install the required dependencies
+- pip install opencv-python-headless numpy matplotlib
+
+## Running the Program
+- Ensure the input image is placed in the appropriate directory and update the image path in the script if necessary.
+- Run the script in a Jupyter Notebook or Python environment:
+- python3 segmentation_quantization.py
+
+## Expected Output
+- The program generates the following outputs:
+
+- Regular Encoding Image: Saved as regular_encoded_image.jpg in the current working directory.
+- Adaptive Encoding Image: Saved as adaptive_encoded_image.jpg in the current working directory.
+- Additionally, the program displays:
+
+- The original image.
+- Edge-detected regions.
+- Blocks marked as important or non-important.
+- Regular and adaptive encoding results, along with their respective bitrates.
+- This section is concise and formatted for easy integration into your GitHub README. Let me know if you need further edits!
