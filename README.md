@@ -14,7 +14,7 @@ Areas deemed of low importance are quantized to a higher degree at the block lev
 ![image](https://github.com/user-attachments/assets/6bfd0a8d-f168-4515-92fb-1ebd19ed9b0a)
 
 ## Features
-- Implementation of image segmentation for adaptive quantization.
+- Implementation of image segmentation for adaptive quantization. Using edge detection for the segmentation as a simple way of finding high-interest areas.
 - Variable quantization scales for important and non-important image blocks.
 - Iterative adjustment of quantization to minimize bitrate differences.
 - Visualization of original, regular encoding, adaptive encoding, and edge detection results.
@@ -78,9 +78,3 @@ This project has been tested on:
 1. OpenCV Documentation: [https://opencv.org/](https://opencv.org/)
 2. NumPy Documentation: [https://numpy.org/](https://numpy.org/)
 3. JPEG Compression Basics: [https://en.wikipedia.org/wiki/JPEG](https://en.wikipedia.org/wiki/JPEG)
-
-## Code Comments
-The code is well-commented to provide clarity on each function and its purpose. Key areas include:
-- DCT and quantization functions
-- Edge detection and block segmentation logic
-- Iterative adjustment of quantization scales
