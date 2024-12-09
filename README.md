@@ -42,7 +42,16 @@ pip install opencv-python numpy matplotlib
 2. Open the Jupyter Notebook in your preferred environment.
 3. Provide an input image in the specified directory (refer to the **Input Format** section).
 4. Execute the notebook cell by cell to process the image.
-5. The outputs will be saved as `regular_encoded_image.jpg` and `adaptive_encoded_image.jpg` in the current directory. Plots of results will also be displayed inline.
+5. to run adaptive:
+   ```bash
+python test_codec.py --input <input_image_path> --output <output_directory> --adaptive
+
+ 
+6. to run regular:
+   ```bash
+python test_codec.py --input <input_image_path> --output <output_directory>
+
+7. The outputs will be saved as `regular_encoded_image.jpg` and `adaptive_encoded_image.jpg` in the current directory. Plots of results will also be displayed inline.
 
 ## Input Format
 - **Format:** `.png` images
