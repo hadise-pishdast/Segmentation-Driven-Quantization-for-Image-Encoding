@@ -45,12 +45,12 @@ pip install opencv-python numpy matplotlib
 5. to run adaptive:
    ```bash
 python test_codec.py --input <input_image_path> --output <output_directory> --adaptive
-
+```
  
 6. to run regular:
    ```bash
 python test_codec.py --input <input_image_path> --output <output_directory>
-
+```
 7. The outputs will be saved as `regular_encoded_image.jpg` and `adaptive_encoded_image.jpg` in the current directory. Plots of results will also be displayed inline.
 
 ## Input Format
